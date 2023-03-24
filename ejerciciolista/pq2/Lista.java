@@ -17,20 +17,26 @@ public class Lista {
             }else{
                 this.nodoPrincipal.siguienteNodo = nodo;
             }
-           
-
         }
-
+    }
+    public void adicionarNodoInicio(Nodo nodo){
+        if (nodoPrincipal == null){
+            nodoPrincipal = nodo;
+        }else{
+            nodo.siguienteNodo = nodoPrincipal;
+            nodoPrincipal = nodo;
+        }
     }
     /**
      * imprime toda la lista
      */
     public void imprimir(){
-        System.out.println(this.nodoPrincipal);
-        System.out.println(this.nodoPrincipal.siguienteNodo);
-        
-
-
+        Nodo nodoAuxiliar = new Nodo("");
+        nodoAuxiliar = nodoPrincipal;
+        while(nodoAuxiliar != null) {
+            System.out.println(nodoAuxiliar.informacion);
+            nodoAuxiliar = nodoAuxiliar.siguienteNodo;
+        }
     }
     /**
      * borra el primer nodo de la lista y la reorganiza, El nodo nodo 2 queda de primero.
