@@ -42,8 +42,14 @@ public class Lista {
      * borra el primer nodo de la lista y la reorganiza, El nodo nodo 2 queda de primero.
      * Si solo hay uno queda vacia
      */
-    public void borrarPrimero(){
-
+    public void borrarPrimero(Nodo nodo){
+        if(nodo != null){
+            if(nodoPrincipal.siguienteNodo == null){
+                nodoPrincipal = null;
+            }else{
+                nodoPrincipal = nodoPrincipal.siguienteNodo;
+            }
+        }
     }
     /**
      * Borra el ultimo nodo de la lista y reorganiza. EL penultimo nodo queda de primero 
